@@ -16,6 +16,8 @@ jobs:
           distribution: temurin
           java-version: '21'
       - uses: android-actions/setup-android@v3
+        with:
+          packages: "platform-tools"
       # No npm cache: setup-node must not require an absent lockfile.
       - run: npm install --no-audit --no-fund
       - run: npm run build
