@@ -1,0 +1,2 @@
+import type {Lesson} from '../engines/types';
+export function LessonField({lesson,label,field,large=false,onChange}:{lesson:Lesson;label:string;field:keyof Lesson;large?:boolean;onChange:(key:keyof Lesson,value:string)=>void}){const value=lesson[field];if(typeof value!=='string')return null;return <label className="field"><span>{label}</span>{large?<textarea value={value} onChange={e=>onChange(field,e.target.value)}/>:<input value={value} onChange={e=>onChange(field,e.target.value)}/>}</label>}
